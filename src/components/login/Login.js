@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../useFirebase/useFirebase';
-
 import './Login.css';
 
 const Login = () => {
-    const { signInUsingGoogle} = useFirebase();
+    const { signInUsingGoogle} = useAuth();
+    const Location = useLocation();
     return (
         <div className="Login-Form">
             <div>

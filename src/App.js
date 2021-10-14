@@ -6,14 +6,17 @@ import Login from './components/login/Login';
 import NotFound from './components/NotFound/NotFound';
 import OrderReview from './components/OrderReview/OrderReview';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import PrivateRoute from './components/privateRoute/PrivateRoute';
+
+
 import Register from './components/register/Register';
 import Shop from './components/Shop/Shop';
 import AuthProvider from './context/AuthProvider';
 function App() {
   return (
     <div>
-    
-      <Router>
+     <AuthProvider>
+     <Router>
         <Header></Header>
         <Switch>
           <Route exact path="/">
@@ -28,9 +31,9 @@ function App() {
           <Route path="/inventory">
             <Inventory></Inventory>
           </Route>
-          <Route path="/placeorder">
+          <PrivateRoute path="/placeorder">
             <PlaceOrder></PlaceOrder>
-          </Route>
+          </PrivateRoute>
            <Route path="/Register">
              <Register></Register>
            </Route>
@@ -43,8 +46,8 @@ function App() {
         </Switch>
       </Router>
 
-      
 
+     </AuthProvider>
     </div>
   );
 }

@@ -11,10 +11,13 @@
 .header nav a{
     text-decoration: none;
     color: white;
-    margin-right: 20px;
+    margin-right: 10px;
     padding: 5px;
     font-size: 20px;
 }
 .header nav a:hover{
     background-color: lightgray;
+}
+.name{
+    color: white;
 }
